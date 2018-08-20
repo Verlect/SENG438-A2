@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 import java.security.InvalidParameterException;
 
 import org.jfree.data.DataUtilities;
+import org.jfree.data.KeyedValues;
+import org.jfree.data.UnknownKeyException;
 import org.jfree.data.Values2D;
 import org.jmock.*;
 import org.junit.*;
@@ -18,6 +20,9 @@ public class DataUtilitiesTest {
     //declare mock variable 
   	private Mockery mockingContext;
   	Values2D values;
+  	
+	private Mockery testArray;
+	private KeyedValues testValues;
     
     
     @BeforeClass public static void setUpBeforeClass() throws Exception {
@@ -389,6 +394,149 @@ public class DataUtilitiesTest {
 	/*
      * End of test for calculateColumnTotal---------------------------
      */
+	
+	
+	
+	
+	/**
+	 * Copied from DataUtilities Cummulative Percentage Test
+	 */
+	
+	@Test
+	public void testFirstList() {
+		testArray = new Mockery();
+		testValues = testArray.mock(KeyedValues.class);
+		testArray.checking(new Expectations() {
+			{
+				allowing(testValues).getValue(0);
+				will(returnValue(100));
+				allowing(testValues).getKey(0);
+				will(returnValue(0));
+				allowing(testValues).getValue(1);
+				will(returnValue(12));
+				allowing(testValues).getKey(1);
+				will(returnValue(1));
+				allowing(testValues).getItemCount();
+				will(returnValue(2));
+			}
+		});
+		double[] values = new double[2];
+		KeyedValues output = DataUtilities.getCumulativePercentages(testValues);
+		values[0] = (double) output.getValue(output.getKey(0));
+		values[1] = (double) output.getValue(output.getKey(1));
+		assertTrue("Values are greater than one or less than 0", values[0] > 1 || values[0] < 0);
+		assertTrue("Values are greater than one or less than 0", values[1] > 1 || values[1] < 0);
+	}
+	
+	@Test
+	public void testNegativeList() {
+		testArray = new Mockery();
+		testValues = testArray.mock(KeyedValues.class);
+		testArray.checking(new Expectations() {
+			{
+				allowing(testValues).getValue(0);
+				will(returnValue(-100));
+				allowing(testValues).getKey(0);
+				will(returnValue(0));
+				allowing(testValues).getValue(1);
+				will(returnValue(-12));
+				allowing(testValues).getKey(1);
+				will(returnValue(1));
+				allowing(testValues).getItemCount();
+				will(returnValue(2));
+			}
+		});
+		double[] values = new double[2];
+		KeyedValues output = DataUtilities.getCumulativePercentages(testValues);
+		values[0] = (double) output.getValue(output.getKey(0));
+		values[1] = (double) output.getValue(output.getKey(1));
+		assertTrue("Values are greater than one or less than 0", values[0] > 1 || values[0] < 0);
+		assertTrue("Values are greater than one or less than 0", values[1] > 1 || values[1] < 0);
+		
+	}
+	
+	@Test
+	public void testValueNull() {
+		testArray = new Mockery();
+		testValues = testArray.mock(KeyedValues.class);
+		testArray.checking(new Expectations() {
+			{
+				allowing(testValues).getValue(0);
+				will(throwException(new UnknownKeyException ("0")));
+				
+				allowing(testValues).getItemCount();
+				will(returnValue(1));
+			}
+		});
+		int asserting = 0;
+		try {
+			DataUtilities.getCumulativePercentages(testValues);
+		} catch (Exception e) {
+			asserting = 1;
+		}
+		if (asserting == 0) {
+			assertTrue(false);
+		}
+	}
+	
+	@Test
+	//null argument passed
+	public void testNull() {
+		
+		int asserting = 0;
+		try {
+			DataUtilities.getCumulativePercentages(null);
+		} catch (Exception e) {
+			asserting = 1;
+		}
+		if (asserting == 0) {
+			assertTrue(false);
+		}
+	}
+	
+	
+	/*
+	 * Copied from ArrayTest2D
+	 */
+	
+	@Test
+    public void testWithValidPositive() {
+        double[][] data = {{1.0, 2.0,3.0}, {4.0, 5.0, 6.0}};
+        Number[][] expected = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
+        Number[][] result = DataUtilities.createNumberArray2D(data);
+        assertArrayEquals(expected, result);
+    }
+
+   
+
+	@Test
+    public void testWithEmptyInputData() {
+        double[][] data = {{}};
+        Number[][] expected = {{}};
+        Number[][] result = DataUtilities.createNumberArray2D(data);
+        assertArrayEquals(expected, result);
+    }
+
+    @Test
+    public void testOutputNegative() {
+        double[][] data = {{-1.0, -2.0, -3.0}, {-4.0, -5.0, -6.0}};
+        Number[][] expected = {{-1.0, -2.0, -3.0}, {-4.0, -5.0, -6.0}};
+        Number[][] result = DataUtilities.createNumberArray2D(data);
+        assertArrayEquals(expected, result);
+    }
+    
+    
+    @Test
+    public void testNullArray() {
+    	boolean test = false;
+        try {
+        	Number[][] result = DataUtilities.createNumberArray2D(null);
+        } catch (Exception e) {
+        	test = true;
+        }
+        assertTrue(test);
+        
+    }
 	
 	
 	
