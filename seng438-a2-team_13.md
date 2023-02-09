@@ -2,12 +2,12 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:      |     |
+| Group \#:      |  13 |
 | -------------- | --- |
-| Student Names: |     |
-|                |     |
-|                |     |
-|                |     |
+| Student Names: | David Tran    |
+|                | Bismarck Leung    |
+|                | Shichao Han    |
+|                | Zirui Wang    |
 
 # 1 Introduction
 
