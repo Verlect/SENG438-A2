@@ -90,8 +90,16 @@ From the included javadoc and preliminary investigation, this method returns "``
 
 ...
 
-### samuelMethodsHere()
-> Returns ...
+### createNumberArray2D()
+> this function should return a 2D array that is in the form of number data types
+
+From the included javadoc and preliminary investigation, this method returns "``number``" from a double. Then the equivalency and boundary class must be derived based on this:
+
+
+- values are negative
+- values are positive
+- there are no values
+- the array is null
 
 ...
 // including the input partitions you have designed
@@ -130,7 +138,7 @@ This test tests the values returned by the function length(), giving the length 
 | testGetLengthequalvalue | this test tests the range between a two values that are equal |
 
 
-### getLowerBound
+### getLowerBound()
 | _Method_ | _Function_ |
 | --------- | -------|
 | getNegativeLowerBound | `lower`  is negative|
@@ -140,6 +148,25 @@ This test tests the values returned by the function length(), giving the length 
 | getMinimumDoubleLowerBound |   `lower`  is the minimum value of a java Double|
 |getNullLowerBound|  range is null|
 
+### getUpperBound()
+| _Method_ | _Function_ |
+| --- | --- |
+|getNegativeUpperBound | `upper`  is negative |
+|getPositiveUpperBound | `upper`  is positive|
+|getZeroUpperBound | `upper`  is zero|
+|getMaximumDoubleUpperBound | `upper`  is the maximum value of a java Double|
+|getOneGreaterThanMinDoubleUpperBound |   `upper`  is one greater than the minimum value of a java Double|
+|getNullUpperBound|  range is null|
+
+### toString()
+| _Method_ | _Function_ |
+| --- | --- |
+|correctToStringWithPositiveUpperAndLower |   both bounds are positive |
+|correctToStringWithNegativeUpperAndLower |  both bounds are negative |
+|correctToStringWithNegativeLowerAndPositiveUpper | one bound is negative |
+|correctToStringWithEquivilentLowerAndUpper |   `lower`  equals  `upper` , both bounds are zero|
+|correctToStringWithNullRange | range is null|
+|correctToStringWithVeryLargeBound |one bound is a very large value|
 
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
