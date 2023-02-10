@@ -85,9 +85,32 @@ From the included javadoc and preliminary investigation, this method returns "``
 
 ## DataUtilities
 
-### chachiMethodsHere()
-> Returns ...
+### calculateRowTotal()
+> Returns sum total of a row
+From the included javadoc and preliminary investigation, this method returns a double from the sun of one row. 
 
+The equivalency and boundary calss can be derived based on:
+
+Valid row input
+Negative row input
+On bound row input
+Out of bound row input
+Invalid Value2D input
+Null Valud2D input
+
+
+### calculateColoumTotal()
+> Returns sum total of a col
+From the included javadoc and preliminary investigation, this method returns a double from the sun of one row. 
+
+The equivalency and boundary calss can be derived based on:
+
+Valid col input
+Negative col input
+On bound col input
+Out of bound row input
+Invalid Value2D input
+Null Valud2D input
 ...
 
 ### createNumberArray2D()
