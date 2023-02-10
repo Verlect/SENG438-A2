@@ -10,7 +10,7 @@ public class RangeTest {
     
     @BeforeClass public static void setUpBeforeClass() throws Exception {
     }
-
+    
 
     @Before
     public void setUp() throws Exception { 
@@ -18,6 +18,35 @@ public class RangeTest {
     	secondRange = new Range (5, 30);
     	thirdRange = new Range(-30, -5);
     	sameValuesRange = new Range(0,0);
+    }
+    
+    //Test Length for Ranges
+    @Test
+    public void testGetLengthnegativelowerpostiviveupper() {
+        double length = this.exampleRange.getLength();
+        double expectedRange = 2.0;
+        assertTrue("Incorrect Range for exampleRange (-1,1)", expectedRange == length);
+    }
+    
+    @Test
+    public void testGetLengthbothpositive() {
+    	double length = this.secondRange.getLength();
+    	double expectedRange = 25.0;
+    	assertTrue("Incorrect Range for exampleRange (5,30)", expectedRange == length);
+    }
+    
+    @Test
+    public void testGetLengthbothnegative() {
+    	double length = this.thirdRange.getLength();
+    	double expectedRange = 25.0;
+    	assertTrue("Incorrect Range for exampleRange (5,30)", expectedRange == length);
+    }
+    
+    @Test
+    public void testGetLengthequalvalue() {
+    	double length = this.sameValuesRange.getLength();
+    	double expectedRange = 0.0;
+    	assertTrue("Incorrect Range for exampleRange (5,30)", expectedRange == length);
     }
 
 
