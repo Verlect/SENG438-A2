@@ -91,12 +91,12 @@ From the included javadoc and preliminary investigation, this method returns a d
 
 The equivalency and boundary calss can be derived based on:
 
-Valid row input
-Negative row input
-On bound row input
-Out of bound row input
-Invalid Value2D input
-Null Valud2D input
+-Valid row input
+-Negative row input
+-On bound row input
+-Out of bound row input
+-Invalid Value2D input
+-Null Valud2D input
 
 
 ### calculateColoumTotal()
@@ -105,13 +105,24 @@ From the included javadoc and preliminary investigation, this method returns a d
 
 The equivalency and boundary calss can be derived based on:
 
-Valid col input
-Negative col input
-On bound col input
-Out of bound row input
-Invalid Value2D input
-Null Valud2D input
-...
+-Valid col input
+-Negative col input
+-On bound col input
+-Out of bound row input
+-Invalid Value2D input
+-Null Valud2D input
+
+### createNumberArrayTestValid
+> convert given double array to number array
+From the included javadoc and preliminary investigation, this method returns a double from the sun of one row. 
+
+The equivalency and boundary calss can be derived based on:
+
+-Valid interger input
+-Valid decimal 
+-Valid Negative input
+-Empty array input
+
 
 ### createNumberArray2D()
 > this function should return a 2D array that is in the form of number data types
