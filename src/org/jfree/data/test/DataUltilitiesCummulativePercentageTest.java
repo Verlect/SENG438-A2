@@ -75,7 +75,7 @@ public class DataUltilitiesCummulativePercentageTest {
 		testArray.checking(new Expectations() {
 			{
 				allowing(testValues).getValue(0);
-				will(throwException(new UnknownKeyException ("1")));
+				will(throwException(new UnknownKeyException ("0")));
 				
 				allowing(testValues).getItemCount();
 				will(returnValue(1));
