@@ -108,6 +108,7 @@ public class RangeTest {
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
     	System.out.println("Dropout NOW");
+    	System.out.println("Dropout this fk course");
     }
     
     
