@@ -90,8 +90,16 @@ From the included javadoc and preliminary investigation, this method returns "``
 
 ...
 
-### samuelMethodsHere()
-> Returns ...
+### createNumberArray2D()
+> this function should return a 2D array that is in the form of number data types
+
+From the included javadoc and preliminary investigation, this method returns "``number``" from a double. Then the equivalency and boundary class must be derived based on this:
+
+
+- values are negative
+- values are positive
+- there are no values
+- the array is null
 
 ...
 // including the input partitions you have designed
