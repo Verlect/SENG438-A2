@@ -69,8 +69,17 @@ From the included javadoc and preliminary investigation, this method returns "``
 - one bound is negative
 - one bound is a very large value
 
-### bismarckIncludeYourMethodHere()
-> Returns...
+### contain()
+> Returns if a value is within a range.
+
+From the included javadoc and preliminary investigation, this method returns "``int``" from a range. Then the equivalency and boundary class must be derived based on this:
+
+- ``lower`` equals ``upper``
+- range is null
+- both bounds are zero
+- both bounds are negative
+- both bounds are positive
+- one bound is negative
 
 ...
 
