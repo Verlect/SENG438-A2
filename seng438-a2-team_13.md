@@ -96,8 +96,6 @@ From the included javadoc and preliminary investigation, this method returns "``
 - if the value ``doesn't exist``
 # 3 Test cases developed
 
-Text…
-
 ## Range
 
 ### contain()
