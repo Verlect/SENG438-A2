@@ -1,12 +1,22 @@
 package org.jfree.data.test;
 
-import static org.junit.Assert.*; import org.jfree.data.Range; import org.junit.*;
+import static org.junit.Assert.*;
+
+import org.jfree.data.DataUtilities;
+import org.jfree.data.Range;
+import org.jfree.data.Values2D;
+import org.jmock.*;
+import org.junit.*;
 
 public class RangeTest {
     private Range exampleRange;
     private Range secondRange;
     private Range thirdRange;
     private Range sameValuesRange;
+    //declare mock variable 
+  	private Mockery mockingContext;
+  	Values2D values;
+    
     
     @BeforeClass public static void setUpBeforeClass() throws Exception {
     }
@@ -18,7 +28,15 @@ public class RangeTest {
     	secondRange = new Range (5, 30);
     	thirdRange = new Range(-30, -5);
     	sameValuesRange = new Range(0,0);
+    	
+    	//Mock setup
+    	mockingContext = new Mockery();
+    	values = mockingContext.mock(Values2D.class);
     }
+    
+    
+    
+    
     
     //Test Length for Ranges
     @Test
@@ -100,6 +118,37 @@ public class RangeTest {
     	assertEquals("Incorrect String Returned.", "Range[0.0,0.0]", sameValuesRange.toString());
     }
     
+    
+    
+    //=============================================================
+    //Chachi's Test
+    
+    
+    //valid test, total of 2 raw
+	@Test
+	public void calculateRowTotalTwoValids() {
+		mockingContext.checking(new Expectations() {
+			{
+				
+				one(values).getColumnCount();
+				will(returnValue(2));
+				one(values).getValue(0,0);
+				will(returnValue(4.5));
+				one(values).getValue(0, 1);
+				will(returnValue(5.5));
+			}
+		});
+		double calcResult = DataUtilities.calculateRowTotal(values, 0);
+		
+		assertEquals(calcResult, 10.0, .000000001d);
+	}
+
+	
+	
+	
+    
+    
+    
 
     @After
     public void tearDown() throws Exception {
@@ -107,8 +156,7 @@ public class RangeTest {
 
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
-    	System.out.println("Dropout NOW");
-    	System.out.println("Dropout this fk course");
+    	System.out.println("All test completed (hopefully)");
     }
     
     
