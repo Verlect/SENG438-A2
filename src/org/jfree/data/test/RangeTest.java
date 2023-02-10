@@ -62,8 +62,33 @@ public class RangeTest {
     	assertTrue("0 is in secondRange (-1,1)", result == isTrue);
     }
     
+    @Test
+    public void testContainsDoesntHaveValue() {
+    	boolean result = secondRange.contains(0);
+    	boolean isTrue = false;
+    	
+    	if (secondRange.getLowerBound() >= 0 && secondRange.getUpperBound() <= 0) {
+    		isTrue = true;
+    	}
+    	
+    	assertTrue("0 is in secondRange (-1,1)", result == isTrue);
+    }
+    
+    
+    
     
     //Testing Length()
+    @Test
+    public void testContainsNull() {
+    	try {
+    		Range empty = null;
+    		boolean length = empty.contains(0);
+    		
+    		assertTrue("Did not throw error correctly", false);
+    	} catch(Exception e) {
+    		assertTrue("Threw error correctly", true);
+    	} 
+    }
     @Test
     public void testGetLengthnegativelowerpostiviveupper() {
         double length = this.exampleRange.getLength();
