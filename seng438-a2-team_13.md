@@ -103,7 +103,7 @@ This test tests ranges by checking if a value is within the range, testContainHa
 | testContainsDoesntHaveValue | this tests tests the values are contained not inside the range |
 | testContainsNull | tests ranges that are null, should give an error |
 
-## length()
+### length()
 
 This test tests the values returned by the function length(), giving the length of the range.
 
