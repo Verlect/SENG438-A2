@@ -1,4 +1,4 @@
-package org.jfree.data.test;
+package original.test;
 
 import static org.junit.Assert.*;
 
@@ -39,6 +39,8 @@ public class RangeTest {
     	boolean result = exampleRange.contains(0);
     	boolean isTrue = true;
     	
+    	result = exampleRange.contains(0);
+    	
     	assertTrue("0 is in exampleRange (-1,1)", result == isTrue);
     	
     	result = secondRange.contains(0);
@@ -58,6 +60,8 @@ public class RangeTest {
     public void testContainsDoesntHaveValue() {
     	boolean result = exampleRange.contains(-100);
     	boolean isTrue = false;
+    	
+    	result = exampleRange.contains(100);
     	
     	assertTrue("-100 is not in exampleRange (-1,1)", result == isTrue);
     	
