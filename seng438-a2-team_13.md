@@ -95,7 +95,7 @@ Text…
 
 ### contain()
 
-This test tests ranges by checking if a value is within the range. 
+This test tests ranges by checking if a value is within the range, testContainHasValue and testContainsDoesntHave Value tests all combinations of positive and negative integers. 
 
 |_Method_|_Function_|
 |---|---|
