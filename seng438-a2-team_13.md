@@ -87,6 +87,13 @@ From the included javadoc and preliminary investigation, this method returns "``
 ...
 // including the input partitions you have designed
 
+### getCumulativePercentages(KeyedValues data)
+
+> Returns keyedvalues of the cumulative percentages of the keyvalues inside the list provided as input, the equivalency and boundary class must be derived must be based on this:
+- ``positive`` integers in the list
+- ``negative`` integers in the list
+- if the value inside the list is ``null``
+- if the value ``doesn't exist``
 # 3 Test cases developed
 
 Text…
@@ -119,13 +126,26 @@ This test tests the values returned by the function length(), giving the length 
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
 
+## DataUltilitiesCummulativePercentageTest.java
+
+### getCumulativePercentages(KeyedValues data)
+
+These tests uses mockery to tests the values returned by the function getCumulativePercentages(KeyedValues data), giving the cumulative percentages of teh values inside the keyedvalues.
+
+|_Method_|_Function_|
+|---|---|
+| testFirstList | tests a list that has positive numbers |
+| testNegativeList | this test tests a list that has negative numbers  |
+| testValueNull | this test tests the list if there was a value that doesn't exist |
+| testNull | this test tests the function on a null keyedvalues |
+
 # 4 How the team work/effort was divided and managed
 
 For distributing the work, our group divided the required 10 methods evenly amongst the 4 of us. As such each person was initially assigned 2 methods each and would transition to covering the last 2 methods, aiding in the completion of another method or completion of the assignment write-up, depending on the current state of the assignment. 
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
+The first thing is team communication, Depending on our writing tests and having regular meetings to discuss and coordinate their work. So it is easy to overcome when we have different approaches to writing tests, which can lead to difficulty communicating and coordinating their work. On the other hand, test management is still critical because we may need help managing and organizing extensive tests when different team members are responsible for different parts of the code. However, we are tracking our processes all the time, and we have good communication so that we overcome these challenges as well. Moreover, we leraned how to use version control systems, like Git, and organizing tests into suites and categories can help teams manage and maintain their tests. Also, Establishing a clear process for writing, updating, and maintaining tests can help teams work more efficiently and effectively with JUnit and Jmock.
 
-Text…
 
 # 6 Comments/feedback on the lab itself
 
