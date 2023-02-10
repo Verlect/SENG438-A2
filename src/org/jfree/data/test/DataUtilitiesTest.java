@@ -43,7 +43,7 @@ public class DataUtilitiesTest {
     //for position of [0,1] and [1,0]
     //function should return (double) 10 as sum
 	@Test
-	public void calculateRowTotalTwoValids() {
+	public void calculateRowTotalTwoPosValids() {
 		mockingContext.checking(new Expectations() {
 			{
 				
@@ -59,9 +59,31 @@ public class DataUtilitiesTest {
 		//System.out.println(calcResult);
 		assertEquals(calcResult, 10.0, .000000001d);
 	}
+	
+	//valid test, test row sum total for table of two column 
+    //Mock table of two column and return -4.5 and -5.5 
+    //for position of [0,1] and [1,0]
+    //function should return (double) 10 as sum
+	@Test
+	public void calcRowTotalNegativeValids() {
+		mockingContext.checking(new Expectations() {
+			{
+				one(values).getColumnCount();
+				will(returnValue(2));
+				
+				one(values).getValue(1,0);
+				will(returnValue(-3.14));
+				one(values).getValue(1, 1);
+				will(returnValue(-2));
+				
+			}
+		});
+		double result = DataUtilities.calculateRowTotal(values, 1);
+		assertEquals(result, -5.14, .000000001d);
+	}
 
 	
-	//test for calculating invalid raw index sums
+	//test for calculating out of bound raw index sums
 	//mock for table of 2 column but only one raw
 	//call function to calculate the 2nd row of the table
 	//out of bound exception should be throw
@@ -81,12 +103,15 @@ public class DataUtilitiesTest {
 				
 			}
 		});
-		double result = DataUtilities.calculateRowTotal(values, 1);
+		DataUtilities.calculateRowTotal(values, 1);
 	}
 	
 	
 	
-	
+	//test for calculating invalid raw index sums
+	//mock for table of 2 column 
+	//call function to calculate the -1 row of the table
+	//out of bound exception should be throw
 	@Test(expected = IndexOutOfBoundsException.class)
 	public void calculateRowTotalNegativeRows() {
 		mockingContext.checking(new Expectations() {
@@ -103,10 +128,81 @@ public class DataUtilitiesTest {
 				
 			}
 		});
-		double Result = DataUtilities.calculateRowTotal(values, -1);
+		DataUtilities.calculateRowTotal(values, -1);
 	}
 	
-    
+	
+	//Test on boundary cases
+	//crate table with 3 rows,
+	//call function to calculate 3rd row sum
+	@Test
+	public void calculateRowTotalOnBoundaryValid() {
+		mockingContext.checking(new Expectations() {
+			{
+				one(values).getColumnCount();
+				will(returnValue(2));
+				
+				
+				one(values).getValue(2,0);
+				will(returnValue(3.14));
+				one(values).getValue(2,1);
+				will(returnValue(2));
+				
+			}
+		});
+		double result = DataUtilities.calculateRowTotal(values, 2);
+		//System.out.println(result);
+		assertEquals(result, 5.14, .000000001d);
+	}
+	
+	
+	
+	
+	//check how function handle invalid input
+	//according to specification:
+	//With invalid input, a total of zero will be returned.
+	@Test
+	public void calculateRowTotalInvalidDataInput() {
+		mockingContext.checking(new Expectations() {
+			{
+				one(values).getColumnCount();
+				will(returnValue(0));
+				one(values).getValue(0, 0);
+				will(throwException(new NullPointerException("Null entries")));
+				
+			}
+		});
+		double result = DataUtilities.calculateRowTotal(values, 0);
+		assertEquals(result, 0.0000, .000000001d);
+	}
+	
+	
+//	//check how function handle invalid input
+//	//according to specification:
+//	//With invalid input, a total of zero will be returned.
+//	@Test
+//	public void calculateRowTotalInvalidColumnInput() {
+//		mockingContext.checking(new Expectations() {
+//			{
+//				one(values).getColumnCount();
+//				will(returnValue(0));
+//				one(values).getValue(0, 0);
+//				will(returnValue(3.14));
+//				
+//			}
+//		});
+//		double result = DataUtilities.calculateRowTotal(values, null);
+//		assertEquals(result, 0.0000, .000000001d);
+//	}
+	
+	
+	
+	//pass in null as values2D
+	//which should cause a exception
+	@Test(expected = Exception.class)
+	public void calcRowNullTest() {
+		DataUtilities.calculateRowTotal(null, 0);
+	}
     
     
 
