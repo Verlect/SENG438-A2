@@ -78,23 +78,32 @@ public class DataUltilitiesCummulativePercentageTest {
 				will(throwException(new UnknownKeyException ("1")));
 				
 				allowing(testValues).getItemCount();
-				will(returnValue(0));
+				will(returnValue(1));
 			}
 		});
+		int asserting = 0;
 		try {
 			DataUtilities.getCumulativePercentages(testValues);
 		} catch (Exception e) {
-			assertTrue(true);
+			asserting = 1;
+		}
+		if (asserting == 0) {
+			assertTrue(false);
 		}
 	}
 	
 	@Test
 	//null argument passed
 	public void testNull() {
+		
+		int asserting = 0;
 		try {
 			DataUtilities.getCumulativePercentages(null);
 		} catch (Exception e) {
-			assertTrue(true);
+			asserting = 1;
+		}
+		if (asserting == 0) {
+			assertTrue(false);
 		}
 	}
 
