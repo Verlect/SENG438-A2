@@ -148,5 +148,7 @@ The first thing is team communication, Depending on our writing tests and having
 
 
 # 6 Comments/feedback on the lab itself
+Provide a better example of Mocking, and the specific requirement is needed.
+Update version for Eclipse IDE.
+Need more precise instructions about this lab, and something still needs to be clarified.
 
-Text…
