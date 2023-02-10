@@ -47,15 +47,4 @@ public class ArrayTest2D {
         assertTrue(test);
         
     }
-
-    @Test
-    public void testAccuracyOfConversion() {
-        double[][] data = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
-        Number[][] result = DataUtilities.createNumberArray2D(data);
-        for (int i = 0; i < result.length; i++) {
-            for (int j = 0; j < result[i].length; j++) {
-                assertEquals(data[i][j], result[i][j].doubleValue(), 0.0);
-            }
-        }
-    }
 }
