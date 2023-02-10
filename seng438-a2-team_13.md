@@ -126,6 +126,19 @@ This test tests the values returned by the function length(), giving the length 
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
 
+## DataUltilitiesCummulativePercentageTest.java
+
+### getCumulativePercentages(KeyedValues data)
+
+These tests uses mockery to tests the values returned by the function getCumulativePercentages(KeyedValues data), giving the cumulative percentages of teh values inside the keyedvalues.
+
+|_Method_|_Function_|
+|---|---|
+| testFirstList | tests a list that has positive numbers |
+| testNegativeList | this test tests a list that has negative numbers  |
+| testValueNull | this test tests the list if there was a value that doesn't exist |
+| testNull | this test tests the function on a null keyedvalues |
+
 # 4 How the team work/effort was divided and managed
 
 For distributing the work, our group divided the required 10 methods evenly amongst the 4 of us. As such each person was initially assigned 2 methods each and would transition to covering the last 2 methods, aiding in the completion of another method or completion of the assignment write-up, depending on the current state of the assignment. 
