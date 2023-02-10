@@ -222,6 +222,25 @@ public class RangeTest {
     	assertEquals("Incorrect String Returned.", "Range[0.0,0.0]", sameValuesRange.toString());
     }
     
+    @Test
+    public void correctToStringWithNullRange() {
+    	Range nullRange = null;
+    	try {
+    		String tester = nullRange.toString();
+    		fail("toString() should have thrown an error for a null Range object.");
+    	} catch (Exception e) {
+    		assertTrue(true);
+    	}
+    }
+    
+    @Test
+    public void correctToStringWithVeryLargeBound() {
+    	String expected = "Range[";
+    	expected+=(Double.MAX_VALUE - 1)+",";
+    	expected+=Double.MAX_VALUE+"]";
+    	assertEquals("Incorrect String Returned.", expected, largest.toString());
+    }
+    
     
 
     @After
