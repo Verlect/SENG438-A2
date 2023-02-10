@@ -11,7 +11,7 @@
 
 # 1 Introduction
 
-The following lab document outlines the unit tests that our group has completed for the Range and DataUtilities class. As part of this, we will discuss our unit test strategy, the cases that were developed, team management, challenges faced and finally, feedback on this lab.
+The following lab document outlines the unit tests that our group has completed for the ``Range`` and ``DataUtilities`` class as part of ``org.jfree.data``. As part of this, we will discuss our unit test strategy, the cases that were developed, team management, challenges faced and finally, feedback on this lab.
 
 # 2 Detailed description of unit test strategy
 
