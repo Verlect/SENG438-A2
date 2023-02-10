@@ -1,6 +1,5 @@
 package original.test;
 
-import org.jmock.*;
 import static org.junit.Assert.*;
 
 import java.util.List;
@@ -12,6 +11,12 @@ import org.jfree.data.UnknownKeyException;
 import org.junit.*;
 
 public class ArrayTest2D {
+	
+	//This test case checks that the method returns 
+	//the expected output for valid input data. 
+	//The input data is a 2D array of doubles, 
+    //and the expected output is a 2D array of Number objects.
+	
 	@Test
     public void testWithValidPositive() {
         double[][] data = {{1.0, 2.0,3.0}, {4.0, 5.0, 6.0}};
@@ -20,7 +25,9 @@ public class ArrayTest2D {
         assertArrayEquals(expected, result);
     }
 
-    @Test
+   
+
+	@Test
     public void testWithEmptyInputData() {
         double[][] data = {{}};
         Number[][] expected = {{}};
@@ -35,6 +42,7 @@ public class ArrayTest2D {
         Number[][] result = DataUtilities.createNumberArray2D(data);
         assertArrayEquals(expected, result);
     }
+    
     
     @Test
     public void testNull() {
