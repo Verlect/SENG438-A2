@@ -91,6 +91,18 @@ From the included javadoc and preliminary investigation, this method returns "``
 
 Text…
 
+## Range
+
+### contain()
+
+This test tests ranges by checking if a value is within the range. 
+
+|_Method_|_Function_|
+|---|---|
+| testContainHasValue | this tests tests the values are contained inside the range |
+| testContainsDoesntHaveValue | this tests tests the values are contained not inside the range |
+| testContainsNull | tests ranges that are null |
+
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
