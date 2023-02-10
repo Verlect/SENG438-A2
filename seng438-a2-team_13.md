@@ -130,7 +130,7 @@ This test tests the values returned by the function length(), giving the length 
 | testGetLengthequalvalue | this test tests the range between a two values that are equal |
 
 
-### getLowerBound
+### getLowerBound()
 | _Method_ | _Function_ |
 | --------- | -------|
 | getNegativeLowerBound | `lower`  is negative|
@@ -140,6 +140,15 @@ This test tests the values returned by the function length(), giving the length 
 | getMinimumDoubleLowerBound |   `lower`  is the minimum value of a java Double|
 |getNullLowerBound|  range is null|
 
+### getUpperBound()
+| _Method_ | _Function_ |
+| --- | --- |
+|getNegativeUpperBound | `upper`  is negative |
+|getPositiveUpperBound | `upper`  is positive|
+|getZeroUpperBound | `upper`  is zero|
+|getMaximumDoubleUpperBound | `upper`  is the maximum value of a java Double|
+|getOneGreaterThanMinDoubleUpperBound |   `upper`  is one greater than the minimum value of a java Double|
+|getNullUpperBound|  range is null|
 
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
