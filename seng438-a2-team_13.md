@@ -22,19 +22,13 @@ The following lab document outlines the unit tests that our group has completed 
 
 From the included javadoc and preliminary investigation, this method returns the difference between ``upper`` and ``lower``. Then the equivalency and boundary class must be derived by these 2 parameters:
 
--``lower`` equals ``upper``
-
--range is null
-
--both bounds are zero
-
--both bounds are negative
-
--both bounds are positive
-
--one bound is negative
-
--one bound is a very large value
+- ``lower`` equals ``upper``
+- range is null
+- both bounds are zero
+- both bounds are negative
+- both bounds are positive
+- one bound is negative
+- one bound is a very large value
 
 Note: Some boundary cases that pertain to the parameters remain untested, such as ``upper``<``lower`` as they're not applicable to this particular method.
 
