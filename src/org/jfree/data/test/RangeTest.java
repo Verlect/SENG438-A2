@@ -174,6 +174,33 @@ public class RangeTest {
     	assertEquals("Incorrect Upper Bound was returned.", 30, secondRange.getUpperBound(), .000000001d);
     } 
     
+    @Test
+    public void getZeroUpperBound() {
+    	assertEquals("Incorrect Upper Bound was returned.", 0, sameValuesRange.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void getMaximumDoubleUpperBound() {
+    	assertEquals("Incorrect Upper Bound was returned.", Double.MAX_VALUE, largest.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void getOneGreaterThanMinDoubleUpperBound() {
+    	assertEquals("Incorrect Upper Bound was returned.", -Double.MAX_VALUE + 1, smallest.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void getNullUpperBound() {
+    	Range nullRange = null;
+    	
+    	try {
+    		Double tester = nullRange.getUpperBound();
+    		fail("getUpperBound() should have thrown an error for a Range object that is null.");
+    	} catch(Exception e) {
+    		assertTrue(true);
+    	}
+    }
+    
     // Testing toString()
     @Test
     public void correctToStringWithPositiveUpperAndLower() {
