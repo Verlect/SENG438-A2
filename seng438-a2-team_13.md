@@ -144,8 +144,8 @@ These tests uses mockery to tests the values returned by the function getCumulat
 For distributing the work, our group divided the required 10 methods evenly amongst the 4 of us. As such each person was initially assigned 2 methods each and would transition to covering the last 2 methods, aiding in the completion of another method or completion of the assignment write-up, depending on the current state of the assignment. 
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
+The first thing is team communication, Depending on our writing tests and having regular meetings to discuss and coordinate their work. So it is easy to overcome when we have different approaches to writing tests, which can lead to difficulty communicating and coordinating their work. On the other hand, test management is still critical because we may need help managing and organizing extensive tests when different team members are responsible for different parts of the code. However, we are tracking our processes all the time, and we have good communication so that we overcome these challenges as well. Moreover, we leraned how to use version control systems, like Git, and organizing tests into suites and categories can help teams manage and maintain their tests. Also, Establishing a clear process for writing, updating, and maintaining tests can help teams work more efficiently and effectively with JUnit and Jmock.
 
-Text…
 
 # 6 Comments/feedback on the lab itself
 
