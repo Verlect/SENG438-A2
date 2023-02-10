@@ -33,6 +33,17 @@ From the included javadoc and preliminary investigation, this method returns the
 Note: Some boundary cases that pertain to the parameters remain untested, such as ``upper``<``lower`` as they're not applicable to this particular method.
 
 ### getLowerBound()
+> Returns the lower bound for the range.
+
+From the included javadoc and preliminary investigation, this method returns the ``lower`` in a ``Range`` object. Then the equivalency and boundary class must be derived based on this:
+
+- ``lower`` is positive
+- ``lower`` is negative
+- ``lower`` is zero
+- ``lower`` is one less than the maximum value of a java Double
+- ``lower`` is the minimum value of a java Double
+- range is null
+
 
 // including the input partitions you have designed
 
