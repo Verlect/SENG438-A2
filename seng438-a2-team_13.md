@@ -59,7 +59,15 @@ From the included javadoc and preliminary investigation, this method returns the
 ### toString()
 > Returns a string representation of this Range.
 
-From the included javadoc and preliminary investigation, this method returns "``Range[lower,upper]``".
+From the included javadoc and preliminary investigation, this method returns "``Range[lower,upper]``". Then the equivalency and boundary class must be derived based on this:
+
+- ``lower`` equals ``upper``
+- range is null
+- both bounds are zero
+- both bounds are negative
+- both bounds are positive
+- one bound is negative
+- one bound is a very large value
 
 // including the input partitions you have designed
 
