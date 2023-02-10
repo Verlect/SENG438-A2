@@ -20,6 +20,49 @@ public class RangeTest {
     	sameValuesRange = new Range(0,0);
     }
     
+    //Testing Contains
+    
+    public void testContainHasValue() {
+    	boolean result = exampleRange.contains(0);
+    	boolean isTrue = false;
+    	
+    	if (exampleRange.getLowerBound() >= 0 && exampleRange.getUpperBound() <= 0) {
+    		isTrue = true;
+    	}
+    	
+    	assertTrue("0 is in exampleRange (-1,1)", result == isTrue);
+    	
+    	result = thirdRange.contains(0);
+    	isTrue = false;
+    	
+    	if (thirdRange.getLowerBound() >= 0 && thirdRange.getUpperBound() <= 0) {
+    		isTrue = true;
+    	}
+    	
+    	assertTrue("0 is in thirdRange (-1,1)", result == isTrue);
+    	
+    	result = sameValuesRange.contains(0);
+    	isTrue = false;
+    	
+    	if (sameValuesRange.getLowerBound() >= 0 && sameValuesRange.getUpperBound() <= 0) {
+    		isTrue = true;
+    	}
+    	
+    	assertTrue("0 is in sameValuesRange (-1,1)", result == isTrue);
+    }
+    
+    public void testContainsDoesntHaveValue() {
+    	boolean result = secondRange.contains(0);
+    	boolean isTrue = false;
+    	
+    	if (secondRange.getLowerBound() >= 0 && secondRange.getUpperBound() <= 0) {
+    		isTrue = true;
+    	}
+    	
+    	assertTrue("0 is in secondRange (-1,1)", result == isTrue);
+    }
+    
+    
     //Testing Length()
     @Test
     public void testGetLengthnegativelowerpostiviveupper() {
