@@ -22,56 +22,44 @@ public class RangeTest {
     
     //Testing Contains
     
+    @Test
     public void testContainHasValue() {
     	boolean result = exampleRange.contains(0);
-    	boolean isTrue = false;
-    	
-    	if (exampleRange.getLowerBound() >= 0 && exampleRange.getUpperBound() <= 0) {
-    		isTrue = true;
-    	}
+    	boolean isTrue = true;
     	
     	assertTrue("0 is in exampleRange (-1,1)", result == isTrue);
     	
-    	result = thirdRange.contains(0);
-    	isTrue = false;
+    	result = secondRange.contains(0);
     	
-    	if (thirdRange.getLowerBound() >= 0 && thirdRange.getUpperBound() <= 0) {
-    		isTrue = true;
-    	}
+    	assertTrue("5 is in thirdRange (5,30)", result == isTrue);
     	
-    	assertTrue("0 is in thirdRange (-1,1)", result == isTrue);
+    	result = thirdRange.contains(-5);
+    	
+    	assertTrue("-5 is in thirdRange (-30,-5)", result == isTrue);
     	
     	result = sameValuesRange.contains(0);
-    	isTrue = false;
-    	
-    	if (sameValuesRange.getLowerBound() >= 0 && sameValuesRange.getUpperBound() <= 0) {
-    		isTrue = true;
-    	}
     	
     	assertTrue("0 is in sameValuesRange (-1,1)", result == isTrue);
     }
     
-    public void testContainsDoesntHaveValue() {
-    	boolean result = secondRange.contains(0);
-    	boolean isTrue = false;
-    	
-    	if (secondRange.getLowerBound() >= 0 && secondRange.getUpperBound() <= 0) {
-    		isTrue = true;
-    	}
-    	
-    	assertTrue("0 is in secondRange (-1,1)", result == isTrue);
-    }
-    
     @Test
     public void testContainsDoesntHaveValue() {
-    	boolean result = secondRange.contains(0);
+    	boolean result = exampleRange.contains(-100);
     	boolean isTrue = false;
     	
-    	if (secondRange.getLowerBound() >= 0 && secondRange.getUpperBound() <= 0) {
-    		isTrue = true;
-    	}
+    	assertTrue("-100 is not in exampleRange (-1,1)", result == isTrue);
     	
-    	assertTrue("0 is in secondRange (-1,1)", result == isTrue);
+    	result = secondRange.contains(-100);
+    	
+    	assertTrue("-100 is not in thirdRange (5,30)", result == isTrue);
+    	
+    	result = thirdRange.contains(100);
+    	
+    	assertTrue("100 is not in thirdRange (-30,-5)", result == isTrue);
+    	
+    	result = sameValuesRange.contains(100);
+    	
+    	assertTrue("100 is not in sameValuesRange (-1,1)", result == isTrue);
     }
     
     
