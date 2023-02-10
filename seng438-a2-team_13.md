@@ -101,7 +101,19 @@ This test tests ranges by checking if a value is within the range, testContainHa
 |---|---|
 | testContainHasValue | this tests tests the values are contained inside the range |
 | testContainsDoesntHaveValue | this tests tests the values are contained not inside the range |
-| testContainsNull | tests ranges that are null |
+| testContainsNull | tests ranges that are null, should give an error |
+
+## length()
+
+This test tests the values returned by the function length(), giving the length of the range.
+
+|_Method_|_Function_|
+|---|---|
+| getLengthNULL | tests ranges that are null, should give an error |
+| testGetLengthnegativelowerpostiviveupper | this test tests the range between a negative to a postitive integer |
+| testGetLengthbothpositive | this test tests the range between a positive to a postitive integer |
+| testGetLengthbothnegative | this test tests the range between a negative to a negative integer |
+| testGetLengthequalvalue | this test tests the range between a two values that are equal |
 
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
