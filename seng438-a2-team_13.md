@@ -44,6 +44,19 @@ From the included javadoc and preliminary investigation, this method returns the
 - ``lower`` is the minimum value of a java Double
 - range is null
 
+### getUpperBound()
+> Returns the upper bound for the range.
+
+From the included javadoc and preliminary investigation, this method returns the ``lower`` in a ``Range`` object. Then the equivalency and boundary class must be derived based on this:
+
+- ``upper`` is positive
+- ``upper`` is negative
+- ``upper`` is zero
+- ``upper`` is the maximum value of a java Double
+- ``upper`` is one greater than the minimum value of a java Double
+- range is null
+
+
 
 // including the input partitions you have designed
 
