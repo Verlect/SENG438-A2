@@ -87,6 +87,13 @@ From the included javadoc and preliminary investigation, this method returns "``
 ...
 // including the input partitions you have designed
 
+### getCumulativePercentages(KeyedValues data)
+
+> Returns keyedvalues of the cumulative percentages of the keyvalues inside the list provided as input, the equivalency and boundary class must be derived must be based on this:
+- ``positive`` integers in the list
+- ``negative`` integers in the list
+- if the value inside the list is ``null``
+- if the value ``doesn't exist``
 # 3 Test cases developed
 
 Text…
