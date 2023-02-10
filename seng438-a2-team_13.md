@@ -97,7 +97,7 @@ you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-Text…
+For distributing the work, our group divided the required 10 methods evenly amongst the 4 of us. As such each person was initially assigned 2 methods each and would transition to covering the last 2 methods, aiding in the completion of another method or completion of the assignment write-up, depending on the current state of the assignment. 
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
