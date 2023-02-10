@@ -56,7 +56,10 @@ From the included javadoc and preliminary investigation, this method returns the
 - ``upper`` is one greater than the minimum value of a java Double
 - range is null
 
+### toString()
+> Returns a string representation of this Range.
 
+From the included javadoc and preliminary investigation, this method returns "``Range[lower,upper]``".
 
 // including the input partitions you have designed
 
