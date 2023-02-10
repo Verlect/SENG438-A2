@@ -69,6 +69,22 @@ From the included javadoc and preliminary investigation, this method returns "``
 - one bound is negative
 - one bound is a very large value
 
+### bismarckIncludeYourMethodHere()
+> Returns...
+
+...
+
+## DataUtilities
+
+### chachiMethodsHere()
+> Returns ...
+
+...
+
+### samuelMethodsHere()
+> Returns ...
+
+...
 // including the input partitions you have designed
 
 # 3 Test cases developed
