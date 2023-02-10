@@ -158,6 +158,16 @@ This test tests the values returned by the function length(), giving the length 
 |getOneGreaterThanMinDoubleUpperBound |   `upper`  is one greater than the minimum value of a java Double|
 |getNullUpperBound|  range is null|
 
+### toString()
+| _Method_ | _Function_ |
+| --- | --- |
+|correctToStringWithPositiveUpperAndLower |   both bounds are positive |
+|correctToStringWithNegativeUpperAndLower |  both bounds are negative |
+|correctToStringWithNegativeLowerAndPositiveUpper | one bound is negative |
+|correctToStringWithEquivilentLowerAndUpper |   `lower`  equals  `upper` , both bounds are zero|
+|correctToStringWithNullRange | range is null|
+|correctToStringWithVeryLargeBound |one bound is a very large value|
+
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
