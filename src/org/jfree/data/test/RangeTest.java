@@ -13,9 +13,8 @@ public class RangeTest {
     private Range secondRange;
     private Range thirdRange;
     private Range sameValuesRange;
-    //declare mock variable 
-  	private Mockery mockingContext;
-  	Values2D values;
+    private Range smallest;
+    private Range largest;
     
     
     @BeforeClass public static void setUpBeforeClass() throws Exception {
@@ -28,10 +27,9 @@ public class RangeTest {
     	secondRange = new Range (5, 30);
     	thirdRange = new Range(-30, -5);
     	sameValuesRange = new Range(0,0);
+    	smallest = new Range(-(Double.MAX_VALUE), -(Double.MAX_VALUE) + 1);
+    	largest = new Range(Double.MAX_VALUE - 1, Double.MAX_VALUE);
     	
-    	//Mock setup
-    	mockingContext = new Mockery();
-    	values = mockingContext.mock(Values2D.class);
     }
     
     //Testing Contains
@@ -136,6 +134,33 @@ public class RangeTest {
     @Test
     public void getPositiveLowerBound() {
     	assertEquals("Incorrect Lower Bound was returned.", 5, secondRange.getLowerBound(), .000000001d);
+    }
+    
+    @Test
+    public void getZeroLowerBound() {
+    	assertEquals("Incorrect Lower Bound was returned.", 0, sameValuesRange.getLowerBound(), .000000001d);
+    }
+    
+    @Test
+    public void getOneLessThanMaxDoubleLowerBound() {
+    	assertEquals("Incorrect Lower Bound was returned.", (Double.MAX_VALUE) -1, largest.getLowerBound(), .000000001d);
+    }
+    
+    @Test
+    public void getMinimumDoubleLowerBound() {
+    	assertEquals("Incorrect Lower Bound was returned.", -(Double.MAX_VALUE), largest.getLowerBound(), .000000001d);
+    }
+    
+    @Test
+    public void getNullLowerBound() {
+    	Range nullRange = null;
+    	
+    	try {
+    		Double tester = nullRange.getLowerBound();
+    		fail("getLowerBound() should have thrown an error for a Range object that is null.");
+    	} catch(Exception e) {
+    		assertTrue(true);
+    	}
     }
     
     // Testing getUpperBound()
