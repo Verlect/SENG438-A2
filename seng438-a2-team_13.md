@@ -129,6 +129,18 @@ This test tests the values returned by the function length(), giving the length 
 | testGetLengthbothnegative | this test tests the range between a negative to a negative integer |
 | testGetLengthequalvalue | this test tests the range between a two values that are equal |
 
+
+### getLowerBound
+| _Method_ | _Function_ |
+| --------- | -------|
+| getNegativeLowerBound | `lower`  is negative|
+| getPositiveLowerBound |   `lower`  is positive|
+| getZeroLowerBound |   `lower`  is zero|
+| getOneLessThanMaxDoubleLowerBound | `lower`  is one less than the maximum value of a java Double|
+| getMinimumDoubleLowerBound |   `lower`  is the minimum value of a java Double|
+|getNullLowerBound|  range is null|
+
+
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
