@@ -93,7 +93,6 @@ public class DataUltilitiesCummulativePercentageTest {
 	}
 	
 	@Test
-	//null argument passed
 	public void testNull() {
 		
 		int asserting = 0;
