@@ -34,11 +34,63 @@ public class RangeTest {
     	values = mockingContext.mock(Values2D.class);
     }
     
+    //Testing Contains
+    
+    @Test
+    public void testContainHasValue() {
+    	boolean result = exampleRange.contains(0);
+    	boolean isTrue = true;
+    	
+    	assertTrue("0 is in exampleRange (-1,1)", result == isTrue);
+    	
+    	result = secondRange.contains(0);
+    	
+    	assertTrue("5 is in thirdRange (5,30)", result == isTrue);
+    	
+    	result = thirdRange.contains(-5);
+    	
+    	assertTrue("-5 is in thirdRange (-30,-5)", result == isTrue);
+    	
+    	result = sameValuesRange.contains(0);
+    	
+    	assertTrue("0 is in sameValuesRange (-1,1)", result == isTrue);
+    }
+    
+    @Test
+    public void testContainsDoesntHaveValue() {
+    	boolean result = exampleRange.contains(-100);
+    	boolean isTrue = false;
+    	
+    	assertTrue("-100 is not in exampleRange (-1,1)", result == isTrue);
+    	
+    	result = secondRange.contains(-100);
+    	
+    	assertTrue("-100 is not in thirdRange (5,30)", result == isTrue);
+    	
+    	result = thirdRange.contains(100);
+    	
+    	assertTrue("100 is not in thirdRange (-30,-5)", result == isTrue);
+    	
+    	result = sameValuesRange.contains(100);
+    	
+    	assertTrue("100 is not in sameValuesRange (-1,1)", result == isTrue);
+    }
     
     
     
     
-    //Test Length for Ranges
+    //Testing Length()
+    @Test
+    public void testContainsNull() {
+    	try {
+    		Range empty = null;
+    		boolean length = empty.contains(0);
+    		
+    		assertTrue("Did not throw error correctly", false);
+    	} catch(Exception e) {
+    		assertTrue("Threw error correctly", true);
+    	} 
+    }
     @Test
     public void testGetLengthnegativelowerpostiviveupper() {
         double length = this.exampleRange.getLength();
