@@ -42,9 +42,8 @@ public class DataUltilitiesCummulativePercentageTest {
 		KeyedValues output = DataUtilities.getCumulativePercentages(testValues);
 		values[0] = (double) output.getValue(output.getKey(0));
 		values[1] = (double) output.getValue(output.getKey(1));
-		//assertTrue("First value is not 100 it is " + values[0], values[0] == 100);
-		//assertTrue("First value is not 12 it is " + values[1], values[1] == 12);
-		
+		assertTrue("Values are greater than one or less than 0", values[0] > 1 || values[0] < 0);
+		assertTrue("Values are greater than one or less than 0", values[1] > 1 || values[1] < 0);
 	}
 	
 	@Test
@@ -69,8 +68,8 @@ public class DataUltilitiesCummulativePercentageTest {
 		KeyedValues output = DataUtilities.getCumulativePercentages(testValues);
 		values[0] = (double) output.getValue(output.getKey(0));
 		values[1] = (double) output.getValue(output.getKey(1));
-		//assertTrue("First value is not -100 it is " + values[0], values[0] == -100);
-		//assertTrue("First value is not -12 it is " + values[1], values[1] == -12);
+		assertTrue("Values are greater than one or less than 0", values[0] > 1 || values[0] < 0);
+		assertTrue("Values are greater than one or less than 0", values[1] > 1 || values[1] < 0);
 		
 	}
 	
