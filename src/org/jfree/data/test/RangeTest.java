@@ -34,6 +34,7 @@ public class RangeTest {
     
     //Testing Contains
     
+    //Testing values that are in the range
     @Test
     public void testContainHasValue() {
     	boolean result = exampleRange.contains(0);
@@ -56,6 +57,7 @@ public class RangeTest {
     	assertTrue("0 is in sameValuesRange (-1,1)", result == isTrue);
     }
     
+    //test values that are not in the range
     @Test
     public void testContainsDoesntHaveValue() {
     	boolean result = exampleRange.contains(-100);
