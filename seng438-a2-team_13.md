@@ -202,6 +202,39 @@ This test tests the values returned by the function length(), giving the length 
 |correctToStringWithNullRange | range is null|
 |correctToStringWithVeryLargeBound |one bound is a very large value|
 
+### calculateRowTotal()
+| _Method_ | _Function_ |
+| --- | --- |
+|calculateRowTotalTwoPosValids |  Valid input and calculate sum of positive numbers |
+|calcRowTotalNegativeValids |  Valid input and calculate sum of negative numbers |
+|calculateRowTotalOutOfBounds | Invalid row input, out of bound of Value2D |
+|calculateRowTotalNegativeRows |   Invalid row input, negative row index numbers|
+|calculateRowTotalOnBoundaryValid | Valid on bound row input|
+|calculateRowTotalInvalidDataInput | invalid value2D input|
+|calcRowNullTest | Null values2D input|
+
+
+### calculateColumnTotal()
+| _Method_ | _Function_ |
+| --- | --- |
+|calculateRowTotalTwoPosValids |  Valid input and calculate sum of positive numbers |
+|calcRowTotalNegativeValids |  Valid input and calculate sum of negative numbers |
+|calculateRowTotalOutOfBounds | Invalid column input, out of bound of Value2D |
+|calculateRowTotalNegativeRows |   Invalid column input, negative column index numbers|
+|calculateRowTotalOnBoundaryValid | Valid on bound column input|
+|calculateRowTotalInvalidDataInput | invalid value2D input|
+|calcRowNullTest | Null values2D input|
+
+
+### createNumberArray()
+| _Method_ | _Function_ |
+| --- | --- |
+|createNumberArrayTestValid |  Valid input of natural number double array |
+|createNumberArrayDecimalValid |  Valid input of decimal number double array |
+|createNumberArrayEmpty | empty double array input|
+|createNumberArrayValidNegative |   Valid input of negative number double array |
+
+
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
