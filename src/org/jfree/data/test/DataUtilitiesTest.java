@@ -12,7 +12,6 @@ import org.junit.*;
  * This test will test DataUtilites class 
  * function includes:
  * calculateColumTotal, calculateTowTotal, creatNumberArray
- * createNumberArray2D, getCumulativePercentages
  */
 
 public class DataUtilitiesTest {
@@ -33,10 +32,7 @@ public class DataUtilitiesTest {
     }
     
     
-    
-    //=============================================================
-    //Chachi's Test
-    //=============================================================
+   
     
     /*
      * Begin test for calculateRowTotal-----------------------
@@ -349,7 +345,8 @@ public class DataUtilitiesTest {
      * Begin test for calculateColumnTotal---------------------
      */
 	
-
+	
+	//Test converting natural number double array to Numberarray
 	@Test
 	public void createNumberArrayTestValid() {
 		double[] input = new double[] {1, 2, 3};
@@ -358,6 +355,7 @@ public class DataUtilitiesTest {
 		assertArrayEquals("Works",expected,result);
 	}
 	
+	//Test converting decimal number double array to Number array
 	@Test
 	public void createNumberArrayDecimalValid() {
 		double[] input = new double[] {1.25, 2.25, 3.25};
@@ -366,6 +364,8 @@ public class DataUtilitiesTest {
 		assertArrayEquals("Works",expected,result);
 	}
 	
+	
+	//Test converting empty double arrya to number array
 	@Test
 	public void createNumberArrayEmpty() {
 		double[] input = new double[] {};
@@ -374,6 +374,8 @@ public class DataUtilitiesTest {
 		assertArrayEquals("Works",expected,result);
 	}
 	
+	
+	//Test negative double array to number array
 	@Test
 	public void createNumberArrayValidNegative() {
 		double[] input = new double[] {-1, -2, -3};
