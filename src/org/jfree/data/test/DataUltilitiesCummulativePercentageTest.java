@@ -1,4 +1,4 @@
-package original.test;
+package org.jfree.data.test;
 
 import org.jmock.*;
 import static org.junit.Assert.*;
