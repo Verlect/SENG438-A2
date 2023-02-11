@@ -83,6 +83,7 @@ public class DataUtilitiesTest {
 			}
 		});
 		double result = DataUtilities.calculateRowTotal(values, 1);
+		System.out.println(result);
 		assertEquals(result, -5.14, .000000001d);
 	}
 
