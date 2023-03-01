@@ -2,7 +2,7 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:      |  13 |
+| Group \#:      |  13 | test
 | -------------- | --- |
 | Student Names: | David Tran    |
 |                | Bismarck Leung    |
