@@ -16,8 +16,8 @@ The following lab document outlines the unit tests that our group has completed 
 # 2 Detailed description of unit test strategy
 
 ## Range.java
-
-### getLength()
+hjkldfsjhkdfsjhkdfshjk
+### getLength() dsa dsa dsa 
 > Returns the length of the range.
 
 From the included javadoc and preliminary investigation, this method returns the difference between ``upper`` and ``lower``. Then the equivalency and boundary class must be derived by these 2 parameters:
